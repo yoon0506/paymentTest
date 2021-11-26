@@ -57,9 +57,9 @@ class ActivityMain : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        NavigationUI.setupWithNavController(
-            mBinding.navigation,
-            findNavController(R.id.navi_host)
-        )
+//        NavigationUI.setupWithNavController(
+//            mBinding.navigation,
+//            findNavController(R.id.navi_host)
+//        )
     }
 }
