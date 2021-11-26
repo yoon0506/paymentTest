@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_graph"
+    app:startDestination="@id/fragSettings">
+
+    <activity
+        android:id="@+id/activityMain"
+        android:name="com.yoon.paymenttest.ActivityMain"
+        app:action="login"
+        tools:layout="@layout/activity_main">
+        <argument
+            android:name="loginResult"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </activity>
+
+    <fragment
+        android:id="@+id/fragSettings"
+        android:name="com.yoon.paymenttest.SettingsFragment"
+        android:label="설정"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_fragSettings_to_fragAD"
+            app:destination="@id/fragAD" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragAD"
+        android:name="com.yoon.paymenttest.AdFragment"
+        android:label="결제"
+        tools:layout="@layout/fragment_ad">
+        <action
+            android:id="@+id/action_fragAD_to_fragSettings"
+            app:destination="@id/fragSettings" />
+    </fragment>
+
+</navigation>
